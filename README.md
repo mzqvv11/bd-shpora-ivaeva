@@ -112,6 +112,11 @@ state enum ('new','cancelled','in_progress','delivered','completed') not null de
 (1,56,5400,'2018-02-01 17:46:59', default),
 ```
 
+```
+Когда можно выбрать 1 вариант - используем ENUM
+когда можно выбрать несколько вариантов - используем SET
+```
+
 Have
 ```
 ```
@@ -123,4 +128,3 @@ Drop
 Distinct
 ```
 ```
-
