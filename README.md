@@ -107,6 +107,11 @@ amount mediumint(8) UNSIGNED not null default 0
 state enum ('new','cancelled','in_progress','delivered','completed') not null default 'new');
 ```
 
+Пример вызова под VALUES в insert into table:
+```
+(1,56,5400,'2018-02-01 17:46:59', default),
+```
+
 Have
 ```
 ```
@@ -119,7 +124,3 @@ Distinct
 ```
 ```
 
-Пример вызова под VALUES в insert into table:
-```
-(1,56,5400,'2018-02-01 17:46:59', default),
-```
