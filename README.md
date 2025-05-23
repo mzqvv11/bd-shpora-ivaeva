@@ -117,14 +117,47 @@ state enum ('new','cancelled','in_progress','delivered','completed') not null de
 когда можно выбрать несколько вариантов - используем SET
 ```
 
-Have
+# DROP, HAVING, DISTINCT
+
+---
+
+## DROP
+
+Удаляет объекты из базы данных: таблицы, базы, индексы и т.д.
+
+> ❗ После удаления восстановить невозможно.
+
+Пример:
 ```
+DROP TABLE users;
+
 ```
 
-Drop
-```
-```
+## HAVING
+Фильтрует результаты после группировки с помощью GROUP BY.
 
-Distinct
+HAVING применяется к агрегированным данным (например, результатам COUNT, SUM, AVG и т.д.).
+
+Пример:
 ```
+SELECT city, COUNT(*) AS total
+FROM customers
+GROUP BY city
+HAVING total > 5;
 ```
+Показывает только те города, в которых больше 5 клиентов.
+
+## DISTINCT
+Убирает дубликаты и возвращает только уникальные строки.
+
+Пример:
+```
+SELECT DISTINCT city FROM customers;
+```
+Выводит список уникальных городов.
+
+С несколькими полями:
+```
+SELECT DISTINCT city, country FROM customers;
+```
+Покажет уникальные пары city + country.
